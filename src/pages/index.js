@@ -1,10 +1,11 @@
 import React from 'react';
+import { PageBody } from './PageElements';
 
 const Home = () => {
     return (
-        <div>
-            <h1>Welcom to Draco Sites</h1>
-        </div>
+        <PageBody>
+            <h1>Welcome to Draco Sites</h1>
+        </PageBody>
     );
 };
 

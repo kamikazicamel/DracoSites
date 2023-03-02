@@ -1,10 +1,11 @@
 import React from 'react';
+import { PageBody } from './PageElements';
 
 const Contact = () => {
     return (
-        <div>
+        <PageBody>
             <h1>Email us somewhere...</h1>
-        </div>
+        </PageBody>
     );
 };
 

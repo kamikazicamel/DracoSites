@@ -22,12 +22,13 @@ import Home from "./pages";
 import About from "./pages/about";
 import Contact from "./pages/contact";
 import Sidebar from "./components/Sidebar";
+import Navigator from "./components/Navigator/Navigator";
 
 function App() {
   return (
     <>
       <Header /><Router>
-        <Sidebar />
+        <Navigator/>
         <Routes>
           <Route exact path='/' element={<Home />} />
           <Route path='/about' element={<About />} />

@@ -1,7 +1,6 @@
 // src/components/Sidebar/SidebarItems.jsx
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Auth } from "aws-amplify";
 import {
   ItemsList,
   ItemContainer,
@@ -10,48 +9,15 @@ import {
   ItemHeadingContainer,
   ItemHeadingWrapper,
   ItemHeadingName,
-} from "./SidebarElements";
-import SidebarAuth from "./SidebarAuth"
+} from "./NavigatorElements";
 
 import { SIDEBAR_DATA } from "../Data";
 
-function checkUser() {
-  Auth.currentAuthenticatedUser().then(user => console.log({ user })).catch(err => console.log(err))
-}
-
-function signOut() {
-  Auth.signOut().then(data => console.log(data)).catch(err => console.log(err))
-}
-
 const SidebarItems = ({ displaySidebar }) => {
   const [activeItem, setActiveItem] = useState(0);
-  const [curUser, setCurUser] = useState(checkUser);
 
   return (
     <ItemsList>
-      <ItemHeadingContainer displaySidebar={displaySidebar}>
-        <ItemHeadingWrapper>
-          <ItemHeadingName>
-            User
-          </ItemHeadingName>
-        </ItemHeadingWrapper>
-      </ItemHeadingContainer>
-      <SidebarAuth/>
-      <ItemContainer>
-        <ItemWrapper>
-          <button onClick={() => Auth.federatedSignIn()}>Sign In</button>
-        </ItemWrapper>
-      </ItemContainer>
-      <ItemContainer>
-        <ItemWrapper>
-          <button onClick={checkUser}>Check User</button>
-        </ItemWrapper>
-      </ItemContainer>
-      <ItemContainer>
-        <ItemWrapper>
-          <button onClick={signOut}>Sign Out</button>
-        </ItemWrapper>
-      </ItemContainer>
       <ItemHeadingContainer displaySidebar={displaySidebar}>
         <ItemHeadingWrapper>
           <ItemHeadingName>

@@ -23,18 +23,22 @@ import About from "./pages/about";
 import Contact from "./pages/contact";
 import Sidebar from "./components/Sidebar";
 import Navigator from "./components/Navigator/Navigator";
+import { UserProvider } from "./components/Auth/UserContext";
 
 function App() {
   return (
     <>
-      <Header /><Router>
-        <Navigator/>
-        <Routes>
-          <Route exact path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/contact' element={<Contact />} />
-        </Routes>
-      </Router>
+      <UserProvider>
+        <Header />
+        <Router>
+          <Navigator/>
+          <Routes>
+            <Route exact path='/' element={<Home />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/contact' element={<Contact />} />
+          </Routes>
+        </Router>
+      </UserProvider>
     </>
   );
 };

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Auth, Logger } from "aws-amplify";
-import { Form, Button, Alert,Row, Col } from "react-bootstrap";
-import { Flex } from "@aws-amplify/ui-react";
+import { Form, Button, Alert } from "react-bootstrap";
 
 const logger = new Logger('JSignin');
 
@@ -102,6 +101,7 @@ export default class JSignIn extends Component{
                     >
                         Sign In 
                     </Button> 
+                    { error && <Alert warning mt="3" text="left" style={style.alert}>{error}</Alert> }
                 </Form>
             </div>
         )

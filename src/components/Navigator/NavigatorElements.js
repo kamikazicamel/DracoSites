@@ -83,6 +83,13 @@ export const ItemWrapper = styled.div`
   color: #7c7788;
 `;
 
+export const AuthWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  display: ${({ displaySidebar }) => (displaySidebar ? "block" : "none")};
+  color: #7c7788;
+`;
+
 export const ItemName = styled.span`
   margin-left: ${({ displaySidebar }) => (displaySidebar ? "0.5rem" : "0")};
   display: ${({ displaySidebar }) => (displaySidebar ? "block" : "none")};

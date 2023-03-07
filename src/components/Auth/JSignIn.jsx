@@ -60,9 +60,9 @@ export default class JSignIn extends Component{
     render(){
         const { authState, authData } = this.props;
         //if(!['signIn', 'signOut', 'signedUp'].includes(authState)){return null;}
-        console.log(authState);
-        console.log(authData);
-        console.log(this.props);
+        //console.log(authState);
+        //console.log(authData);
+        //console.log(this.props);
 
         const style = {
             width: '10rem',

@@ -1,9 +1,13 @@
 import { Auth, Hub } from "aws-amplify";
-import { switchUser, updateProfile, deleteProfile } from "./actions";
+import { connect } from "react-redux";
+import { switchUser } from "./userSlice";
+import { updateProfile, deleteProfile } from "./actions";
+import { Component } from "react";
 
-export default class AmplifyBridge{
-    constructor(store){
-        this.store = store;
+class AmplifyBridge extends Component{
+    constructor(props){
+        super(props)
+        //this.store = store;
 
         this.onAuthEvent = this.onAuthEvent.bind(this);
 
@@ -21,14 +25,16 @@ export default class AmplifyBridge{
     }
 
     checkUser() {
+        console.log('User Checked');
         Auth.currentAuthenticatedUser()
             .then(user => {
-                this.store.dispatch(switchUser(user));
-                this.loadProfile(user);
+                console.log('user');
+                switchUser({user});
+                //this.loadProfile(user);
             })
             .catch(() => {
-                this.store.dispatch(switchUser(null));
-                this.store.dispatch(deleteProfile());
+                switchUser(null);
+                //this.store.dispatch(deleteProfile());
             });
     }
 
@@ -40,5 +46,12 @@ export default class AmplifyBridge{
             })
             .catch(err => this.store.dispatch(deleteProfile(err)));
     }
+
+    render(){
+        return(
+            <></>
+        )
+    }
 }
 
+export default connect(null, {switchUser})(AmplifyBridge)

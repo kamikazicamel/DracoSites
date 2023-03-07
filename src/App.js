@@ -7,14 +7,17 @@ import Home from "./pages";
 import About from "./pages/about";
 import Contact from "./pages/contact";
 import Navigator from "./components/Navigator/Navigator";
-import store from "./store";
 import AmplifyBridge from "./store/AmplifyBridge";
+import CognitoBridge from "./store/CognitoBridge";
 
-new AmplifyBridge(store);
+
 
 function App() {
+  //AmplifyBridge();
+  CognitoBridge();
   return (
     <>
+      <AmplifyBridge />
       <Header />
       <Router>
         <Navigator/>

@@ -8,9 +8,10 @@ export default configureStore({
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
-            serializableCheck:{
-                ignoreState: ['user'],
-                ignoredActions: ['user/switchUser']
-            }
+            serializableCheck: false/*{
+                ignoredActions: ['switchUser','user/switchUser', 'actionCreator'],
+                ignoredPaths: ['user.value'],
+                ignoredActionPaths: ['user.value'],
+            }*/
         })
 })

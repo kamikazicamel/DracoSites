@@ -8,13 +8,10 @@ import About from "./pages/about";
 import Contact from "./pages/contact";
 import Navigator from "./components/Navigator/Navigator";
 import AmplifyBridge from "./store/AmplifyBridge";
-import CognitoBridge from "./store/CognitoBridge";
 
 
 
 function App() {
-  //AmplifyBridge();
-  CognitoBridge();
   return (
     <>
       <AmplifyBridge />

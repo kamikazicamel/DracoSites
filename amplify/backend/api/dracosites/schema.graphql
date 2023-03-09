@@ -1,5 +1,28 @@
-type Note @model @auth(rules: [ { allow: public } ] ){
+type Member @model @auth(rules: [{allow: public}]) {
   id: ID!
-  name: String!
-  description: String
+  sub: String
+  firstName: String!
+  middleName: String
+  lastName: String!
+  suffix: String
+  nickName: String
+  birthDay: AWSDate
+  bsaId: String
+  active: Boolean
+  streetAddress: String
+  city: String
+  state: String
+  zipCode: String
+  homePhone: AWSPhone
+  workPhone: AWSPhone
+  cellPhone: AWSPhone
+  emailAddress: AWSEmail
+  mailingList: Boolean
+  newsletter: Boolean
+  medFormDate: AWSDate
+  emergencyContact1: String
+  emergencyContact1Phone: AWSPhone
+  emergencyContact2: String
+  emergencyContact2Phone: AWSPhone
 }
+ 

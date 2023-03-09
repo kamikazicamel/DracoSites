@@ -3,17 +3,32 @@ import { createSlice } from "@reduxjs/toolkit";
 export const userSlice = createSlice({
     name: 'user',
     initialState:{
-        value: null
+        value: null,
+        username: '',
+        sub: '',
+        email: '',
     },
     reducers:{
         switchUser: (state, action) => {
-            console.log('sliced');
-            //console.log(action.payload);
             state.value = action.payload;
+        },
+        loadUsername: (state, action) => {
+            state.username = action.payload;
+        },
+        loadSub: (state, action) => {
+            state.sub = action.payload;
+        },
+        loadEmail: (state, action) => {
+            state.email = action.payload;
+        },
+        clearUser:(state) => {
+            state.username = '';
+            state.email = '';
+            state.sub = '';
         },
     },
 })
 
-export const { switchUser } = userSlice.actions
+export const { loadUsername, loadSub, loadEmail, clearUser } = userSlice.actions
 
 export default userSlice.reducer

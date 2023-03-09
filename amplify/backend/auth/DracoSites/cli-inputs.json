@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "dracosites74ed5c56_identitypool_74ed5c56",
+    "identityPoolName": "testAuthIdentityPool",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "dracos74ed5c56",
-    "userPoolName": "dracosites74ed5c56_userpool_74ed5c56",
+    "resourceNameTruncated": "dracos42688d89",
+    "userPoolName": "DracoSites",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -25,20 +25,20 @@
     "aliasAttributes": [],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
-    "userpoolClientWriteAttributes": [
-      "email"
-    ],
-    "userpoolClientReadAttributes": [
-      "email"
-    ],
-    "userpoolClientLambdaRole": "dracos74ed5c56_userpoolclient_lambda_role",
+    "userpoolClientWriteAttributes": [],
+    "userpoolClientReadAttributes": [],
+    "userpoolClientLambdaRole": "DracoS42688d89_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "74ed5c56",
-    "resourceName": "dracosites74ed5c56",
+    "sharedId": "42688d89",
+    "resourceName": "DracoSites",
     "authSelections": "identityPoolAndUserPool",
-    "useDefault": "default",
-    "userPoolGroupList": [],
     "serviceName": "Cognito",
+    "useDefault": "manual",
+    "userPoolGroups": false,
+    "userPoolGroupList": [],
+    "adminQueries": false,
+    "thirdPartyAuth": false,
+    "authProviders": [],
     "usernameCaseSensitive": false,
     "useEnabledMfas": true
   }

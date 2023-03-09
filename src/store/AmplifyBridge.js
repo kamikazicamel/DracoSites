@@ -1,13 +1,11 @@
 import { Auth, Hub } from "aws-amplify";
 import { connect } from "react-redux";
-import { switchUser } from "./userSlice";
-import { updateProfile, deleteProfile } from "./actions";
+import { loadEmail, loadSub, loadUsername, clearUser } from "./userSlice";
 import { Component } from "react";
 
 class AmplifyBridge extends Component{
     constructor(props){
         super(props)
-        //this.store = store;
 
         this.onAuthEvent = this.onAuthEvent.bind(this);
 
@@ -25,16 +23,15 @@ class AmplifyBridge extends Component{
     }
 
     checkUser() {
-        console.log('User Checked');
+        //console.log('User Checked');
         Auth.currentAuthenticatedUser()
             .then(user => {
-                console.log('user');
-                switchUser({user});
-                //this.loadProfile(user);
+                //console.log(user);
+                this.props.loadUsername(user.username);
+                this.loadProfile(user);
             })
             .catch(() => {
-                switchUser(null);
-                //this.store.dispatch(deleteProfile());
+                this.props.clearUser();
             });
     }
 
@@ -42,9 +39,19 @@ class AmplifyBridge extends Component{
         Auth.userAttributes(user)
             .then(data => {
                 const profile = this.translateAttributes(data);
-                this.store.dispatch(updateProfile(profile));
+                //console.log(profile['email']);
+                this.props.loadEmail(profile['email']);
+                this.props.loadSub(profile['sub']);
             })
-            .catch(err => this.store.dispatch(deleteProfile(err)));
+            .catch(err => console.log(err));
+    }
+
+    translateAttributes(data){
+        const attributes = {};
+        data
+            .filter(attr => ['email', 'sub'].includes(attr.Name))
+            .forEach(attr => attributes[attr.Name] = attr.Value);
+        return attributes;
     }
 
     render(){
@@ -54,4 +61,11 @@ class AmplifyBridge extends Component{
     }
 }
 
-export default connect(null, {switchUser})(AmplifyBridge)
+const mapDispatchToProps = {
+    loadEmail,
+    loadSub,
+    loadUsername,
+    clearUser
+}
+
+export default connect(null, mapDispatchToProps)(AmplifyBridge)

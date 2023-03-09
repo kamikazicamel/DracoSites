@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import AmplifyBridge from "../../store/AmplifyBridge";
 import JSignIn from "./JSignIn";
@@ -18,14 +18,14 @@ function SignInWidget() {
 function UserWidget(user, profile) {
     return(
         <>
-            {profile.given_name || user.username}<br/>
+            {profile.given_name || user}<br/>
             <JSignOut />
         </>
     )
 }
 
 export default function AuthSideBarWidget(){
-    const user = useSelector((state) => state.user.value);
+    const user = useSelector((state) => state.user.username);
     const profile =  {};
 
     return(

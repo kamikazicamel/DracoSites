@@ -1,4 +1,5 @@
 import React from "react";
+import { MemberCreateForm } from "../ui-components";
 import { PageBody } from "./PageElements";
 
 const About = () => {
@@ -7,6 +8,7 @@ const About = () => {
             <h1>
                 This is the About Us Page
             </h1>
+            <MemberCreateForm />
         </PageBody>
     );
 };

@@ -1,28 +1,72 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getNote = /* GraphQL */ `
-  query GetNote($id: ID!) {
-    getNote(id: $id) {
+export const getMember = /* GraphQL */ `
+  query GetMember($id: ID!) {
+    getMember(id: $id) {
       id
-      name
-      description
+      sub
+      firstName
+      middleName
+      lastName
+      suffix
+      nickName
+      birthDay
+      bsaId
+      active
+      streetAddress
+      city
+      state
+      zipCode
+      homePhone
+      workPhone
+      cellPhone
+      emailAddress
+      mailingList
+      newsletter
+      medFormDate
+      emergencyContact1
+      emergencyContact1Phone
+      emergencyContact2
+      emergencyContact2Phone
       createdAt
       updatedAt
     }
   }
 `;
-export const listNotes = /* GraphQL */ `
-  query ListNotes(
-    $filter: ModelNoteFilterInput
+export const listMembers = /* GraphQL */ `
+  query ListMembers(
+    $filter: ModelMemberFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listNotes(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listMembers(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        name
-        description
+        sub
+        firstName
+        middleName
+        lastName
+        suffix
+        nickName
+        birthDay
+        bsaId
+        active
+        streetAddress
+        city
+        state
+        zipCode
+        homePhone
+        workPhone
+        cellPhone
+        emailAddress
+        mailingList
+        newsletter
+        medFormDate
+        emergencyContact1
+        emergencyContact1Phone
+        emergencyContact2
+        emergencyContact2Phone
         createdAt
         updatedAt
       }

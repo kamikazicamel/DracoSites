@@ -1,43 +1,109 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createNote = /* GraphQL */ `
-  mutation CreateNote(
-    $input: CreateNoteInput!
-    $condition: ModelNoteConditionInput
+export const createMember = /* GraphQL */ `
+  mutation CreateMember(
+    $input: CreateMemberInput!
+    $condition: ModelMemberConditionInput
   ) {
-    createNote(input: $input, condition: $condition) {
+    createMember(input: $input, condition: $condition) {
       id
-      name
-      description
+      sub
+      firstName
+      middleName
+      lastName
+      suffix
+      nickName
+      birthDay
+      bsaId
+      active
+      streetAddress
+      city
+      state
+      zipCode
+      homePhone
+      workPhone
+      cellPhone
+      emailAddress
+      mailingList
+      newsletter
+      medFormDate
+      emergencyContact1
+      emergencyContact1Phone
+      emergencyContact2
+      emergencyContact2Phone
       createdAt
       updatedAt
     }
   }
 `;
-export const updateNote = /* GraphQL */ `
-  mutation UpdateNote(
-    $input: UpdateNoteInput!
-    $condition: ModelNoteConditionInput
+export const updateMember = /* GraphQL */ `
+  mutation UpdateMember(
+    $input: UpdateMemberInput!
+    $condition: ModelMemberConditionInput
   ) {
-    updateNote(input: $input, condition: $condition) {
+    updateMember(input: $input, condition: $condition) {
       id
-      name
-      description
+      sub
+      firstName
+      middleName
+      lastName
+      suffix
+      nickName
+      birthDay
+      bsaId
+      active
+      streetAddress
+      city
+      state
+      zipCode
+      homePhone
+      workPhone
+      cellPhone
+      emailAddress
+      mailingList
+      newsletter
+      medFormDate
+      emergencyContact1
+      emergencyContact1Phone
+      emergencyContact2
+      emergencyContact2Phone
       createdAt
       updatedAt
     }
   }
 `;
-export const deleteNote = /* GraphQL */ `
-  mutation DeleteNote(
-    $input: DeleteNoteInput!
-    $condition: ModelNoteConditionInput
+export const deleteMember = /* GraphQL */ `
+  mutation DeleteMember(
+    $input: DeleteMemberInput!
+    $condition: ModelMemberConditionInput
   ) {
-    deleteNote(input: $input, condition: $condition) {
+    deleteMember(input: $input, condition: $condition) {
       id
-      name
-      description
+      sub
+      firstName
+      middleName
+      lastName
+      suffix
+      nickName
+      birthDay
+      bsaId
+      active
+      streetAddress
+      city
+      state
+      zipCode
+      homePhone
+      workPhone
+      cellPhone
+      emailAddress
+      mailingList
+      newsletter
+      medFormDate
+      emergencyContact1
+      emergencyContact1Phone
+      emergencyContact2
+      emergencyContact2Phone
       createdAt
       updatedAt
     }

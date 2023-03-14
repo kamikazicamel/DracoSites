@@ -16,13 +16,13 @@
     },
     {
       id: 4,
-      name: "invoice",
-      path: "invoice",
+      name: "Member List",
+      path: "memberList",
     },
     {
       id: 5,
-      name: "users",
-      path: "users",
+      name: "Member Creation",
+      path: "memberCreate",
     },
     {
       id: 6,
